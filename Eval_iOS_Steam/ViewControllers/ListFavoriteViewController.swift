@@ -22,6 +22,8 @@ class ListFavoriteViewController: UIViewController {
             UINib(nibName: "FavoriteTableViewCell", bundle: nil),
             forCellReuseIdentifier: "FavoriteTableViewCell"
         )
+        tableView.separatorStyle = .singleLine
+        tableView.separatorColor = .systemGray
         
         resultsController.delegate = self
 
