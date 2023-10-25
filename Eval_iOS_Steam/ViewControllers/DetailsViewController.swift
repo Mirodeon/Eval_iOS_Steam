@@ -21,12 +21,17 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var gamePad: UIImageView!
     @IBOutlet weak var btnIsFav: UIButton!
     
-    var game: Game?
+    var game: Game? {
+        didSet {
+            updateFav()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         roundLogo()
         setupContent()
+        checkFav()
     }
     
     @IBAction func actionBtnInfoSteam(_ sender: Any) {
@@ -37,7 +42,13 @@ class DetailsViewController: UIViewController {
     
     @IBAction func actionBtnIsFav(_ sender: Any) {
         game?.isFav.toggle()
-        updateFav()
+        if let game = game {
+            if(game.isFav) {
+                DataManager.shared.addGame(game: game)
+            } else {
+                DataManager.shared.deleteGameById(id: game.id)
+            }
+        }
     }
     
     
@@ -46,6 +57,12 @@ class DetailsViewController: UIViewController {
         logoLinux.roundView()
         logoMac.roundView()
         btnIsFav.roundView()
+    }
+    
+    private func checkFav() {
+        if let game = game {
+            self.game?.isFav = DataManager.shared.checkIfGameIsFav(id: game.id)
+        }
     }
     
     private func setupContent() {
@@ -75,8 +92,10 @@ class DetailsViewController: UIViewController {
     
     private func updateFav() {
         if let game = game {
-            btnIsFav.tintColor = game.isFav ? .red : .white
-            btnIsFav.setImage(UIImage(systemName: game.isFav ? "heart.fill" : "heart"), for: .normal)
+            if (isViewLoaded) {
+                btnIsFav.tintColor = game.isFav ? .red : .white
+                btnIsFav.setImage(UIImage(systemName: game.isFav ? "heart.fill" : "heart"), for: .normal)
+            }
         }
     }
 }
