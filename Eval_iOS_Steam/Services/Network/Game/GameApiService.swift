@@ -20,6 +20,6 @@ class GameApiService: NetworkService {
     }
     
     func getFeaturedWinGames(completionHandler: @escaping GamesCompletionHandler) {
-        loadGame(url: EndPoint.featureWinGame.urlBuilder(), completionHandler: completionHandler)
+        loadGame(url: EndPoint.featureGame.urlBuilder(), completionHandler: completionHandler)
     }
 }

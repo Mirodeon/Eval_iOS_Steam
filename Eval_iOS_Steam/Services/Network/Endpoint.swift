@@ -8,11 +8,11 @@
 import Foundation
 
 enum EndPoint {
-    case featureWinGame
+    case featureGame
     
     func urlBuilder() -> String {
         switch self {
-        case .featureWinGame:
+        case .featureGame:
             return BaseUrl.game("api/featured").getUrl()
         }
     }
