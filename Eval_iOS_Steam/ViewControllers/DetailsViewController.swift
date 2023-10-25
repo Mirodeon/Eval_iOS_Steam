@@ -31,6 +31,10 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         roundLogo()
         setupContent()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         checkFav()
     }
     
