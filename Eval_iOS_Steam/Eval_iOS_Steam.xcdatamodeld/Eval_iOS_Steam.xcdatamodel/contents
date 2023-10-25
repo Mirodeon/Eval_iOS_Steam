@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E252" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GameDao" representedClassName="GameDao" syncable="YES">
+        <attribute name="addedDate" optional="YES" attributeType="String"/>
+        <attribute name="currency" optional="YES" attributeType="String"/>
+        <attribute name="discounted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="discountPercent" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="finalPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="largeImage" optional="YES" attributeType="String"/>
+        <attribute name="linux" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mac" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="originalPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="smallImage" optional="YES" attributeType="String"/>
+        <attribute name="support" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="windows" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+</model>
