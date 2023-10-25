@@ -19,7 +19,7 @@ class GameApiService: NetworkService {
         load(url: url, typeCodable: GameDto.self, typeFromDto: GameData.self, completionHandler: completionHandler)
     }
     
-    func getFeaturedWinGames(completionHandler: @escaping GamesCompletionHandler) {
+    func getFeaturedGames(completionHandler: @escaping GamesCompletionHandler) {
         loadGame(url: EndPoint.featureGame.urlBuilder(), completionHandler: completionHandler)
     }
 }

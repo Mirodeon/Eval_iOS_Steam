@@ -29,7 +29,7 @@ class ListFeaturedViewController: UIViewController {
     }
     
     private func getDataGame() {
-        GameApiService.shared.getFeaturedWinGames { data, error in
+        GameApiService.shared.getFeaturedGames { data, error in
             if let data = data {
                 var snapshot = NSDiffableDataSourceSnapshot<Int, Game>()
                 snapshot.appendSections([1])
